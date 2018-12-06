@@ -1,4 +1,4 @@
-Single language website boilerplate for [CMintS](https://cmints.io).
+Single language website starter for [CMintS](https://cmints.io).
 
 ## Installation
 
