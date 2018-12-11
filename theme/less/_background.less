@@ -1,0 +1,46 @@
+html {
+  height:100%;
+  background:#63D0FF;
+}
+
+body{
+  margin:0;
+  padding:0;
+  background:#63D0FF;
+  height:100%;
+}
+
+#wrapper {
+  position:relative;
+  width:100%;
+  height:100%;
+}
+
+#clouds{
+  background:url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/56901/bg-clouds2-tinypng.png") repeat-x 0 bottom #ACE6FF;
+  width:100%;
+  height:230px; /*190px*/
+  min-height:230px;
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:1;
+  -webkit-transform:translate3d(0,0,0.01);
+  transform:translate3d(0,0,0.01);
+}
+
+#ground {
+  background:url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/56901/grass_tile-tinypng.png") repeat-x 0 0 transparent;    
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index:2;
+  width: 100%;
+  height: 192px;
+  min-height:192px;
+  border:0 none transparent;
+  outline:0 none transparent;
+  -webkit-transform:translate3d(0,0,0.01);
+  transform:translate3d(0,0,0.01);
+  will-change: transform;
+}

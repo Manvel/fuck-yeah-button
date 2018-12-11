@@ -1,0 +1,74 @@
+button
+{
+  position: absolute;
+  font-family: 'Bangers', cursive;
+  width: 345px;
+  height: 345px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 98px 0;
+  line-height: 90px;
+  font-size: 82px;
+  letter-spacing: 2px;
+  color: #fff;
+  background: linear-gradient(to bottom, #f6f6f6 0%, #b4b4b4 50%, #f6f6f6 100%);
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,0.35), inset 0 0 0 4px rgba(0,0,0,0.05), 8px 8px 10px rgba(0,0,0,0.3);
+  border: none;
+  border-radius: 100%;
+  z-index: 1;
+  outline: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  transition: all 0.05s ease-in;
+}
+button.mousedown
+{
+  color: rgba(255,255,255,0.9);
+  font-size: 76px;
+  line-height: 82px;
+  letter-spacing: 1px;
+  padding: 100px 0;
+}
+button.mousedown:before
+{
+  width: 265px;
+  height: 265px;
+  box-shadow: 0 0 0 9px #424040, 0 0 0 10px rgba(0,0,0,0.8);
+}
+button.mousedown:after
+{
+  opacity: 1;
+  width: 235px;
+  height: 235px;
+}
+button:before,
+button:after
+{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  border-radius: 100%;
+  z-index: -1;
+  transition: all 0.05s ease-in;
+}
+button:before
+{
+  width: 270px;
+  height: 270px;
+  background: linear-gradient(to bottom, #e60513 0%, #bb0b16 100%);
+  box-shadow: 0 0 0 7px #424040, 0 0 0 8px rgba(0,0,0,0.8);
+}
+button:after
+{
+  width: 240px;
+  height: 240px;
+  opacity: 0;
+  box-shadow: inset 0 0 45px rgba(0,0,0,0.1);
+  background: linear-gradient(to bottom, #bb0b16 0%, #e60513 100%);
+  border: 2px solid #dd0615;
+}
