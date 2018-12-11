@@ -1,0 +1,25 @@
+{
+  "name": "cmints-starter-single-lang",
+  "version": "1.0.0",
+  "description": "Single language website starter for CMintS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cmints --static",
+    "deploy": "cmints --static --deploy",
+    "start": "cmints --start",
+    "dev": "cmints --start --no-cache --dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Manvel/cmints-single-lang-boilerplate.git"
+  },
+  "author": "Manvel Saroyan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Manvel/cmints-single-lang-boilerplate/issues"
+  },
+  "dependencies": {
+    "cmints": "^0.8.1"
+  }
+}
