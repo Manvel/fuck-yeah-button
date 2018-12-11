@@ -1,7 +1,7 @@
 const templateData =
 {
   site: {
-    title: "CMintS Starter" // See "layouts/_head.ejs"
+    title: "Fuck Yeah Project" // See "layouts/_head.ejs"
   }
 };
 
