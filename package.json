@@ -20,6 +20,6 @@
     "url": "https://github.com/Manvel/cmints-single-lang-boilerplate/issues"
   },
   "dependencies": {
-    "cmints": "^0.8.2"
+    "cmints": "^0.8.3"
   }
 }
