@@ -35,6 +35,8 @@ function createListener(eventName, classname, action)
   {
     if (action)
     {
+      console.log(eventName);
+      console.log("clicked");
       clicked();
       button.classList.add(classname);
     }
@@ -84,7 +86,14 @@ function clicked()
   }
 }
 
-createListener("mousedown", "mousedown", true);
-createListener("mouseup", "mousedown");
-createListener("touchstart", "mousedown", true);
-createListener("touchend", "mousedown");
+if ("ontouchstart" in document.documentElement)
+{
+  createListener("touchstart", "mousedown", true);
+  createListener("touchend", "mousedown");
+}
+else
+{
+  createListener("mousedown", "mousedown", true);
+  createListener("mouseup", "mousedown");
+}
+
