@@ -10,7 +10,6 @@ let fyeas = {};
 fetch("data.json").then((data) => data.json()).then((data) =>
 {
   fyeas = data;
-  console.log(Object.keys(fyeas));
   for (const filename of Object.keys(fyeas))
   {
     fetchSound(filename).then((audio) =>
@@ -75,7 +74,6 @@ function clicked()
   const {audio, volume} = fyeas[fileName];
   if (audio)
   {
-    console.log(fileName);
     playSound(audio, volume);
   }
   else
