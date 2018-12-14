@@ -1,4 +1,4 @@
-const {readdirSync, writeFileSync} = require("fs");
+const {readdirSync, readFileSync, writeFileSync} = require("fs");
 const path = require("path");
 
 const templateData =
@@ -8,11 +8,14 @@ const templateData =
   }
 };
 
-const fyeas = readdirSync("./public/sounds").map((filePath) => 
+const fyeaControls = JSON.parse(readFileSync("./fycontrol.json"));
+const fyeas = readdirSync("./public/sounds").reduce((acc, filePath) => 
 {
   const {base} = path.parse(filePath);
-  return path.join("sounds", base);
-});
+  if (!acc[base])
+    acc[base] = {}
+  return acc;
+}, fyeaControls);
 
 writeFileSync("./public/data.json", JSON.stringify(fyeas));
 
