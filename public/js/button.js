@@ -36,8 +36,6 @@ function createListener(eventName, classname, action)
   {
     if (action)
     {
-      console.log(eventName);
-      console.log("clicked");
       clicked();
       button.classList.add(classname);
     }
