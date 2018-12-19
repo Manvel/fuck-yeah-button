@@ -78,35 +78,35 @@ function getKey(obj)
   return keys[keys.length * Math.random() << 0];
 };
 
-function playSound(data, animation, volume)
+function playSound({audio, animation, volume, offset = 0})
 {
   const gainNode = audioCtx.createGain();
   const source = audioCtx.createBufferSource();
 
-  source.buffer = data;
+  source.buffer = audio;
   gainNode.gain.value = 1;
   if (volume)
     gainNode.gain.value = volume;
   source.connect(gainNode);
   
   gainNode.connect(audioCtx.destination);
-  source.start(0);
+  source.start(0, offset);
 
   if (animation && animation.elem)
-    playAnimation(animation, source);
+    playAnimation(animation, source, offset);
 }
 
-function playAnimation(animation, source)
+function playAnimation(animation, source, offset)
 {
   const {elem} = animation;
   const imagesElem = document.querySelector("#images");
   imagesElem.appendChild(elem);
-  elem.style.transition = "opacity 1s ease-out 1s";
-  const duration = source.buffer.duration;
+  elem.style.transition = "opacity ease-out 1s";
+  const duration = source.buffer.duration * 1000;
   window.setTimeout(() => 
   {
     elem.style.opacity = 0;
-  }, duration - duration / 10);
+  }, (duration - duration / 3) - offset * 1000);
   source.onended = () =>
   {
     if (imagesElem.contains(elem))
@@ -120,16 +120,17 @@ function playAnimation(animation, source)
 function clicked()
 {
   const fileName = getKey(fyeas);
-  const {audio, volume, animation} = fyeas[fileName];
-  if (audio)
+  const data = fyeas[fileName];
+  if (data.audio)
   {
-    playSound(audio, animation, volume);
+    playSound(data);
   }
   else
   {
     fetchSound(fileName).then((audio) =>
     {
-      playSound(audio, animation);
+      data.audio = audio;
+      playSound(data);
     })
   }
 }

@@ -3,21 +3,37 @@
     "volume": 10
   },
   "diego2.ogg": {
-    "volume": 5
+    "volume": 5,
+    "offset": 1,
+    "animation": {
+      "url": "https://media.giphy.com/media/58FMNcLkwCSqheL8Ig/source.gif",
+      "width": "200",
+      "height": "200"
+    }
   },
   "diego3.ogg": {
-    "volume": 5
+    "volume": 5,
+    "animation": {
+      "url": "https://media.giphy.com/media/l4FGj9iqbAuojUvU4/giphy.gif",
+      "width": "200",
+      "height": "200"
+    }
   },
   "diego4.ogg": {
     "volume": 5,
     "animation": {
-      "url": "https://media.giphy.com/media/3ohzdGmM14QTUne9tm/giphy.gif",
+      "url": "https://media.giphy.com/media/xUPGcLyG1vxvvkE2U8/giphy.gif",
       "width": "200",
       "height": "200"
     }
   },
   "diego5.ogg": {
-    "volume": 10
+    "volume": 10,
+    "animation": {
+      "url": "https://media.giphy.com/media/3oKIPtazMRnudq9Cnu/giphy.gif",
+      "width": "200",
+      "height": "200"
+    }
   },
   "diego6.ogg": {
     "volume": 10
@@ -36,5 +52,22 @@
   },
   "diego12.ogg": {
     "volume": 10
+  },
+  "job1.ogg": {
+    "volume": 10,
+    "animation": {
+      "url": "https://media.giphy.com/media/3o7aD6sVgUureq74v6/giphy.gif",
+      "width": "200",
+      "height": "200"
+    }
+  },
+  "arthur1.ogg": {
+    "volume": 10,
+    "offset": 0.5,
+    "animation": {
+      "url": "https://media.giphy.com/media/l378teQkdes3zGQMg/source.gif",
+      "width": "200",
+      "height": "200"
+    }
   }
 }
