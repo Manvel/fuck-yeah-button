@@ -9,7 +9,12 @@
     "volume": 5
   },
   "diego4.ogg": {
-    "volume": 5
+    "volume": 5,
+    "animation": {
+      "url": "https://media.giphy.com/media/3ohzdGmM14QTUne9tm/giphy.gif",
+      "width": "200",
+      "height": "200"
+    }
   },
   "diego5.ogg": {
     "volume": 10
@@ -18,6 +23,18 @@
     "volume": 10
   },
   "diego7.ogg": {
+    "volume": 10
+  },
+  "diego9.ogg": {
+    "volume": 10
+  },
+  "diego10.ogg": {
+    "volume": 10
+  },
+  "diego11.ogg": {
+    "volume": 10
+  },
+  "diego12.ogg": {
     "volume": 10
   }
 }
