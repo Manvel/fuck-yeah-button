@@ -6,13 +6,20 @@ const audioCtx = new AudioContext();
 
 let fyeas = {};
 
+function isOgSupported()
+{
+  const myAudio = document.createElement("audio");
+  return myAudio.canPlayType("audio/ogg");
+}
+
 fetch("data.json").then((data) => data.json()).then((data) =>
 {
   fyeas = data;
+  const format = isOgSupported() ? ".ogg" : ".mp3";
   for (const filename of Object.keys(fyeas))
   {
     const {animation} = fyeas[filename];
-    fetchSound(filename).then((audio) =>
+    fetchSound(filename + format).then((audio) =>
     {
       fyeas[filename].audio = audio;
     });
@@ -43,7 +50,8 @@ function fetchImg(animation)
 
 function fetchSound(fileName)
 {
-  return fetch(`sounds/${fileName}`).then((sound) =>
+  const subFolder = isOgSupported() ? "" : "fallback/";
+  return fetch(`sounds/${subFolder}${fileName}`).then((sound) =>
   {
     return sound.arrayBuffer();
   }).then((buffer) =>

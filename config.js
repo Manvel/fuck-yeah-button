@@ -9,11 +9,11 @@ const templateData =
 };
 
 const fyeaControls = JSON.parse(readFileSync("./fycontrol.json"));
-const fyeas = readdirSync("./public/sounds").reduce((acc, filePath) => 
+const fyeas = readdirSync("./public/sounds").filter((item) => item != "fallback").reduce((acc, filePath) => 
 {
-  const {base} = path.parse(filePath);
-  if (!acc[base])
-    acc[base] = {}
+  const {name} = path.parse(filePath);
+  if (!acc[name])
+    acc[name] = {}
   return acc;
 }, fyeaControls);
 
