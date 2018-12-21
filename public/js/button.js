@@ -49,7 +49,12 @@ function fetchSound(fileName)
     return sound.arrayBuffer();
   }).then((buffer) =>
   {
-    return audioCtx.decodeAudioData(buffer);
+    return new Promise((resolve, reject) => {
+      audioCtx.decodeAudioData(buffer, (buffer) =>
+      {
+        resolve(buffer);
+      });
+    });
   });
 }
 
