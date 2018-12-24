@@ -8,7 +8,7 @@ button
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  padding: 98px 0;
+  padding: 90px 0;
   line-height: 90px;
   font-size: 82px;
   letter-spacing: 2px;
@@ -33,15 +33,15 @@ button.mousedown
 }
 button.mousedown:before
 {
-  width: 265px;
-  height: 265px;
+  width: 76.8%;
+  height: 76.8%;
   box-shadow: 0 0 0 9px #424040, 0 0 0 10px rgba(0,0,0,0.8);
 }
 button.mousedown:after
 {
   opacity: 1;
-  width: 235px;
-  height: 235px;
+  width: 68.1%;
+  height: 68.1%;
 }
 button:before,
 button:after
@@ -58,17 +58,29 @@ button:after
 }
 button:before
 {
-  width: 270px;
-  height: 270px;
+  width: 78.2%;
+  height: 78.2%;
   background: linear-gradient(to bottom, #e60513 0%, #bb0b16 100%);
   box-shadow: 0 0 0 7px #424040, 0 0 0 8px rgba(0,0,0,0.8);
 }
 button:after
 {
-  width: 240px;
-  height: 240px;
+  width: 69.5%;
+  height: 69.5%;
   opacity: 0;
   box-shadow: inset 0 0 45px rgba(0,0,0,0.1);
   background: linear-gradient(to bottom, #bb0b16 0%, #e60513 100%);
   border: 2px solid #dd0615;
+}
+
+@media(max-width: 544px)
+{
+  button
+  {
+    width: 300px;
+    height: 300px;
+    font-size: 74px;
+    padding: 75px 0;
+    line-height: 80px;
+  }
 }

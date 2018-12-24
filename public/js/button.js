@@ -70,17 +70,16 @@ function createListener(eventName, classname, action)
 {
   button.addEventListener(eventName, () =>
   {
-    audioCtx.resume().then(() => {
-      if (action)
-      {
-        clicked();
-        button.classList.add(classname);
-      }
-      else
-      {
-        button.classList.remove(classname);
-      }
-    });
+    audioCtx.resume();
+    if (action)
+    {
+      clicked();
+      button.classList.add(classname);
+    }
+    else
+    {
+      button.classList.remove(classname);
+    }
   });
 }
 
