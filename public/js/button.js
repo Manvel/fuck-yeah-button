@@ -52,8 +52,12 @@ function setContainerSize()
   setContainerPosition((bottom + 50) + "px");
 }
 
-setContainerSize();
-window.addEventListener("resize", setContainerSize);
+document.addEventListener("DOMContentLoaded", () =>
+{
+  setContainerSize();
+  window.addEventListener("resize", setContainerSize);
+});
+
 
 },{"./_counter":2}],4:[function(require,module,exports){
 const {incrementCount} = require("./_counter");

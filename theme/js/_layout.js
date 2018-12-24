@@ -10,5 +10,9 @@ function setContainerSize()
   setContainerPosition((bottom + 50) + "px");
 }
 
-setContainerSize();
-window.addEventListener("resize", setContainerSize);
+document.addEventListener("DOMContentLoaded", () =>
+{
+  setContainerSize();
+  window.addEventListener("resize", setContainerSize);
+});
+
