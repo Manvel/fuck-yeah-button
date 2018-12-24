@@ -4,7 +4,8 @@ const path = require("path");
 const templateData =
 {
   site: {
-    title: "Fuck Yeah Project" // See "layouts/_head.ejs"
+    title: "Fuck Yeah Project",
+    countText: "Fuck Yeah Counter:"
   }
 };
 

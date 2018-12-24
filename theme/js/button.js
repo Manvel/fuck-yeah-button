@@ -1,7 +1,8 @@
+const {incrementCount} = require("./_counter");
+const {playAnimation} = require("./_animation");
+require("./_layout");
 
-const button = document.querySelector("button");
-const imageContainer = document.querySelector("#images");
-const fyeahBuffer = {};
+const button = document.querySelector("#button");
 const AudioContext = window.AudioContext || window.webkitAudioContext;
 const audioCtx = new AudioContext();
 
@@ -41,13 +42,6 @@ function fetchImg(animation)
   if (height)
     img.style.height = height;
   return img;
-}
-
-function setContainerSize()
-{
-  const {top} = button.getBoundingClientRect();
-  imageContainer.style.width = top + "px";
-  imageContainer.style.height = top + "px";
 }
 
 function fetchSound(fileName)
@@ -111,29 +105,9 @@ function playSound({audio, animation, volume, offset = 0})
     playAnimation(animation, source, offset);
 }
 
-function playAnimation(animation, source, offset)
-{
-  const {elem} = animation;
-  const imagesElem = document.querySelector("#images");
-  imagesElem.appendChild(elem);
-  elem.style.transition = "opacity ease-out 1s";
-  const duration = source.buffer.duration * 1000;
-  window.setTimeout(() => 
-  {
-    elem.style.opacity = 0;
-  }, (duration - duration / 3) - offset * 1000);
-  source.onended = () =>
-  {
-    if (imagesElem.contains(elem))
-    {
-      imagesElem.removeChild(elem);
-      elem.style.opacity = 1;
-    }
-  };
-}
-
 function clicked()
 {
+  incrementCount();
   const fileName = getKey(fyeas);
   const data = fyeas[fileName];
   if (data.audio)
@@ -160,6 +134,3 @@ else
   createListener("mousedown", "mousedown", true);
   createListener("mouseup", "mousedown");
 }
-
-setContainerSize();
-window.addEventListener("resize", setContainerSize);
