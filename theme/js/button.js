@@ -1,5 +1,6 @@
 
 const button = document.querySelector("button");
+const imageContainer = document.querySelector("#images");
 const fyeahBuffer = {};
 const AudioContext = window.AudioContext || window.webkitAudioContext;
 const audioCtx = new AudioContext();
@@ -36,16 +37,17 @@ function fetchImg(animation)
   const img = document.createElement("img");
   img.setAttribute("src", url);
   if (width)
-    img.width = width;
+    img.style.width = width;
   if (height)
-    img.height = height;
-  img.style.zIndex = 2;
-  img.style.marginLeft = "auto";
-  img.style.marginRight = "auto";
-  img.style.left = 0;
-  img.style.right = 0;
-  img.style.position = "absolute";
+    img.style.height = height;
   return img;
+}
+
+function setContainerSize()
+{
+  const {top} = button.getBoundingClientRect();
+  imageContainer.style.width = top + "px";
+  imageContainer.style.height = top + "px";
 }
 
 function fetchSound(fileName)
@@ -159,3 +161,5 @@ else
   createListener("mouseup", "mousedown");
 }
 
+setContainerSize();
+window.addEventListener("resize", setContainerSize);

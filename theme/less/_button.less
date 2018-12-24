@@ -1,3 +1,5 @@
+@import "_variables.less";
+
 button
 {
   position: absolute;
@@ -26,10 +28,10 @@ button
 button.mousedown
 {
   color: rgba(255,255,255,0.9);
-  font-size: 76px;
+  font-size: 70px;
   line-height: 82px;
   letter-spacing: 1px;
-  padding: 100px 0;
+  padding: 76px 0;
 }
 button.mousedown:before
 {
@@ -73,7 +75,7 @@ button:after
   border: 2px solid #dd0615;
 }
 
-@media(max-width: 544px)
+@media(max-width: @mobile-breakpoint)
 {
   button
   {
