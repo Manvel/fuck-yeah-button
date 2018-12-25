@@ -1,6 +1,8 @@
 const {readdirSync, readFileSync, writeFileSync} = require("fs");
 const path = require("path");
 
+const description = "Fuck Yeah Button, for Fuck Yeah Sound and Animation! Turn on the volume to the top - hit the button YEAH!";
+
 const shareButtons = [
   {
     "name": "Facebook",
@@ -10,7 +12,8 @@ const shareButtons = [
   {
     "name": "Twitter",
     "image": "/images/social/twitter.svg",
-    "path": "https://twitter.com/home?status="
+    "path": "https://twitter.com/home?status=",
+    "text": ` - ${description}`
   },
   {
     "name": "Google Plus",
@@ -20,7 +23,7 @@ const shareButtons = [
   {
     "name": "Linkedin",
     "image": "/images/social/linkedin.svg",
-    "path": "https://www.linkedin.com/shareArticle?url=goog.com"
+    "path": "https://www.linkedin.com/shareArticle?url="
 
   }
 ];
@@ -29,7 +32,7 @@ const templateData =
 {
   site: {
     countText: "Fuck Yeah Counter:",
-    shareButtons
+    shareButtons, description
   }
 };
 
