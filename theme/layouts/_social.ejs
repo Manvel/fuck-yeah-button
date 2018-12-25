@@ -1,0 +1,9 @@
+<ul class="share-buttons">
+  <% site.shareButtons.forEach(({name, image, path}) => { %>
+    <li>
+      <a href="<%= path + 'https://fuckyeahbutton.org/' %>" title="Share on <%= name %>" target="_blank">
+        <img alt="Share on <%= name %>" src="<%= image %>" />
+      </a>
+    </li>
+  <% }); %>
+</ul>
