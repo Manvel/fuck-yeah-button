@@ -1,7 +1,12 @@
+const imagesElem = document.querySelector("#images");
+
 const playAnimation = (animation, source, offset) =>
 {
   const {elem} = animation;
-  const imagesElem = document.querySelector("#images");
+  if (imagesElem.children.length % 2 != 0 && Math.random() >= 0.5)
+  {
+    elem.style.bottom = "20px";
+  }
   imagesElem.appendChild(elem);
   elem.style.transition = "opacity ease-out 1s";
   const duration = source.buffer.duration * 1000;

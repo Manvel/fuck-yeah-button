@@ -6,7 +6,6 @@ function setContainerSize()
 {
   const {top, bottom} = button.getBoundingClientRect();
   imageContainer.style.width = top + "px";
-  imageContainer.style.height = top + "px";
   setContainerPosition((bottom) + "px");
 }
 
