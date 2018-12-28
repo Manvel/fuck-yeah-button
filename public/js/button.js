@@ -164,13 +164,8 @@ function createListener(eventName, classname, action)
 
 function getKey(obj)
 {
-  const urlKey = new URLSearchParams(window.location.search).get("play");
-  let keys = Object.keys(obj);
-  if (urlKey)
-  {
-    keys = /[0-9]$/.test(urlKey) ? keys.filter((key) => key == urlKey) :
-                                   keys.filter((key) => key.includes(urlKey));
-  }
+  const urlKeys = new URLSearchParams(window.location.search).getAll("play");
+  const keys = urlKeys.length ? urlKeys : Object.keys(obj);
   return keys[keys.length * Math.random() << 0];
 };
 
