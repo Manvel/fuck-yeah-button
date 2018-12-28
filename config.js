@@ -47,4 +47,6 @@ const fyeas = readdirSync("./public/sounds").filter((item) => item != "fallback"
 
 writeFileSync("./public/data.json", JSON.stringify(fyeas));
 
-module.exports = {templateData};
+const configReloadWatchers = ["fycontrol.json"];
+
+module.exports = {templateData, configReloadWatchers};
