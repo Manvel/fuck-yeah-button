@@ -21,6 +21,7 @@ const playAnimation = (animation, source, offset) =>
     {
       imagesElem.removeChild(elem);
       elem.style.opacity = 1;
+      elem.style.bottom = null;
     }
   };
 }
@@ -164,9 +165,12 @@ function createListener(eventName, classname, action)
 function getKey(obj)
 {
   const urlKey = new URLSearchParams(window.location.search).get("play");
+  let keys = Object.keys(obj);
   if (urlKey)
-    return urlKey;
-  const keys = Object.keys(obj)
+  {
+    keys = /[0-9]$/.test(urlKey) ? keys.filter((key) => key == urlKey) :
+                                   keys.filter((key) => key.includes(urlKey));
+  }
   return keys[keys.length * Math.random() << 0];
 };
 

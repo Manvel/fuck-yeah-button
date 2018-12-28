@@ -20,6 +20,7 @@ const playAnimation = (animation, source, offset) =>
     {
       imagesElem.removeChild(elem);
       elem.style.opacity = 1;
+      elem.style.bottom = null;
     }
   };
 }
