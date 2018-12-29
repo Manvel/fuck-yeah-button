@@ -1,6 +1,7 @@
 <title><%= page.title %></title>
 
 <% const description = page.description ? page.description : site.description; %>
+<% const image = "https://fuckyeahbutton.org/images/logo/400.png"; %>
 <meta name="description" content="<%=  description %>">
 
 <meta charset="UTF-8">
@@ -12,11 +13,11 @@
 <!-- OG -->
 <meta property="og:title" content="<%= page.title %>">
 <meta content="<%=  description %>" property="og:description">
-<meta property="og:image" content="/images/logo/400.png">
+<meta property="og:image" content="<%= image %>">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://fuckyeahbutton.org/images/logo/400.png">
+<meta name="twitter:image" content="<%= image %>">
 <meta name="twitter:title" content="<%= page.title %>">
 <meta name="twitter:description" content="<%= description %>">
 
